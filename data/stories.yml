@@ -8,24 +8,6 @@ stories:
   - intent: affirm
   - action: ask_flavor
   - intent: deny
-- story: sad path 1
-  steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: mood_unhappy
-  - action: utter_cheer_up
-  - action: utter_did_that_help
-  - intent: affirm
-  - action: utter_happy
-- story: sad path 2
-  steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: mood_unhappy
-  - action: utter_cheer_up
-  - action: utter_did_that_help
-  - intent: deny
-  - action: utter_goodbye
 - story: get ice cream
   steps:
   - intent: get_icecream
@@ -53,3 +35,8 @@ stories:
   - action: utter_ask_flavor
   - intent: deny
   - action: utter_goodbye
+- story: Getting started
+  steps:
+  - intent: get_started
+  - action: utter_greet
+  - action: utter_ask_flavor

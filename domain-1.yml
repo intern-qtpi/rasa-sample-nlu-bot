@@ -7,16 +7,17 @@ intents:
 - goodbye
 - get_icecream
 - get_flavor
+- get_started
 entities:
 - flavor
 responses:
   utter_ask_flavor:
   - buttons:
-    - payload: Strawberry
+    - payload: strawberry
       title: Strawberry
-    - payload: Chocolate
+    - payload: chocolate
       title: Chocolate
-    - payload: Vanilla
+    - payload: vanilla
       title: Vanilla
     text: Sure!! Choose the flavor you want to try...
   utter_strawberry:
