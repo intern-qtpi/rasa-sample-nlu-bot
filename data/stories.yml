@@ -1,14 +1,13 @@
 version: "2.0"
-
 stories:
-
 - story: happy path
   steps:
   - intent: greet
   - action: utter_greet
-  - intent: mood_great
-  - action: utter_happy
-
+  - action: utter_ask_flavor
+  - intent: affirm
+  - action: ask_flavor
+  - intent: deny
 - story: sad path 1
   steps:
   - intent: greet
@@ -18,7 +17,6 @@ stories:
   - action: utter_did_that_help
   - intent: affirm
   - action: utter_happy
-
 - story: sad path 2
   steps:
   - intent: greet
@@ -26,5 +24,32 @@ stories:
   - intent: mood_unhappy
   - action: utter_cheer_up
   - action: utter_did_that_help
+  - intent: deny
+  - action: utter_goodbye
+- story: get ice cream
+  steps:
+  - intent: get_icecream
+  - action: utter_general
+- story: Get ice cream flavor
+  steps:
+  - intent: get_flavor
+    entities:
+    - flavor: strawberry
+  - action: utter_strawberry
+  - action: utter_try_more
+  - intent: get_flavor
+    entities:
+    - flavor: chocolate
+  - action: utter_chocolate
+  - action: utter_try_more
+  - intent: get_flavor
+    entities:
+    - flavor: vanilla
+  - action: utter_vanilla
+  - action: utter_try_more
+- story: want ice cream
+  steps:
+  - intent: affirm
+  - action: utter_ask_flavor
   - intent: deny
   - action: utter_goodbye

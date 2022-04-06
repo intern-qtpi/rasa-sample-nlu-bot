@@ -1,0 +1,54 @@
+version: '2.0'
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+intents:
+- greet
+- goodbye
+- get_icecream
+- get_flavor
+entities:
+- flavor
+responses:
+  utter_ask_flavor:
+  - buttons:
+    - payload: Strawberry
+      title: Strawberry
+    - payload: Chocolate
+      title: Chocolate
+    - payload: Vanilla
+      title: Vanilla
+    text: Sure!! Choose the flavor you want to try...
+  utter_strawberry:
+  - image: https://cdn.pixabay.com/photo/2014/04/04/19/49/cone-313944__340.png
+    text: Here's your strwberry ice cream!
+  utter_chocolate:
+  - image: https://cdn.pixabay.com/photo/2016/06/02/22/13/ice-1432274__340.png
+    text: Here's your Chocolate ice cream!
+  utter_vanilla:
+  - image: https://cdn.pixabay.com/photo/2012/04/13/12/00/ice-cream-cone-32094__340.png
+    text: Here's your vanilla ice cream!
+  utter_general:
+  - buttons:
+    - payload: yes
+      title: Yes
+    - payload: no
+      title: No
+    text: Would you like an ice cream?
+  utter_try_more:
+  - buttons:
+    - payload: yes
+      title: Yes
+    - payload: no
+      title: No
+    text: Would you like to try more ?
+  utter_get_started:
+  - text: Hi ! Welcome to Simran's Ice cream parlor...
+actions:
+- utter_goodbye
+- utter_greet
+- utter_ask_flavor
+- utter_strawberry
+- utter_chocolate
+- utter_vanilla
+- ask_flavor
