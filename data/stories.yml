@@ -4,7 +4,7 @@ stories:
   steps:
   - intent: greet
   - action: utter_greet
-  - action: utter_ask_flavor
+  - action: utter_general
   - intent: affirm
   - action: ask_flavor
   - intent: deny
